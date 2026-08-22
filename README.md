@@ -1487,7 +1487,7 @@ The platform extends beyond conventional irrigation automation by providing crop
 
 ### RMK College of Engineering and Technology
 
-### Department of EE – VLSI
+### Department of EE – VLSI(design & technology)
 
 **Team Members**
 
@@ -1520,7 +1520,7 @@ The platform extends beyond conventional irrigation automation by providing crop
 
 ### Department
 
-# 🔬 EE – VLSI
+# 🔬 EE – VLSI(design & technology)
 
 ---
 
