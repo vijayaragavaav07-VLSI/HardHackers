@@ -14,7 +14,7 @@
 | **Problem Statement ID** | **PSH4**                                                     |
 | **Problem Statement**    | **Smart Agricultural Irrigation and Crop Monitoring System** |
 | **Institution**          | **RMK College of Engineering and Technology**                |
-| **Department**           | **EE – VLSI(design & technoligy)**                                                |
+| **Department**           | **EE – VLSI(design & technology)**                                                |
 | **Team Name**            | **HardHackers**                                              |
 | **Project Name**         | **AgriSense AI**                                             |
 | **Project Type**         | **Hardware + IoT + AI**                                      |
