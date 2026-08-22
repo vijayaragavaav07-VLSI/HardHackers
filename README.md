@@ -25,7 +25,7 @@
 
 ### RMK College of Engineering and Technology
 
-### Department of EE – VLSI
+### Department of EE – VLSI(design & technology)
 
 | No. | Team Member           | 
 | --: | --------------------- |
