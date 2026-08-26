@@ -592,6 +592,119 @@ body.role-admin .nav-item.admin-only{ display:flex; }
 .lang-btn.active{ background:var(--canopy-700); color:#fff; }
 .lang-switcher-login .lang-btn.active{ background:var(--leaf-400); color:#fff; }
 .login-screen{ position:relative; }
+/* ---------- NEW: shared form additions ---------- */
+.field textarea{
+  width:100%; padding:10px 13px; border-radius:11px; border:1px solid var(--line);
+  font-family:var(--font-body); font-size:13px; color:var(--ink); background:#fff; resize:vertical; min-height:70px;
+}
+.field textarea:focus{ outline:2px solid var(--leaf-400); outline-offset:1px; }
+
+/* ---------- CASE / STATUS BADGES ---------- */
+.case-status{ font-size:10px; font-weight:800; padding:4px 10px; border-radius:100px; text-transform:uppercase; letter-spacing:.3px; white-space:nowrap; }
+.case-status.new{ background:#E7EEFA; color:var(--sky); }
+.case-status.review{ background:#FBF0DC; color:#8A6414; }
+.case-status.assigned{ background:#E4F5EB; color:var(--canopy-700); }
+.case-status.progress{ background:#FBF0DC; color:#8A6414; }
+.case-status.ai{ background:#EDE7FA; color:#6B4FBF; }
+.case-status.verify{ background:#FBF0DC; color:#8A6414; }
+.case-status.completed{ background:#DDF3E4; color:var(--canopy-700); }
+.case-status.resolved{ background:#DDF3E4; color:var(--canopy-700); }
+.case-status.waiting{ background:#F1F1EC; color:#6B7A70; }
+
+.pri-tag{ font-size:9.5px; font-weight:800; padding:3px 8px; border-radius:100px; text-transform:uppercase; }
+.pri-tag.high{ background:#FBE1DC; color:#B3392A; }
+.pri-tag.medium{ background:#FBF0DC; color:#8A6414; }
+.pri-tag.low{ background:#DDF3E4; color:var(--canopy-700); }
+
+/* case list / table cards */
+.case-card{ background:rgba(255,255,255,0.78); border:1px solid var(--line); border-radius:16px; padding:16px 18px; box-shadow:var(--shadow); margin-bottom:12px; display:flex; flex-direction:column; gap:8px; }
+.case-card-top{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+.case-id{ font-family:var(--font-mono); font-weight:700; font-size:13px; color:var(--canopy-900); }
+.case-meta{ display:flex; gap:14px; flex-wrap:wrap; font-size:11.5px; color:#5C7C6C; }
+.case-meta b{ color:var(--canopy-900); font-weight:600; }
+.case-actions{ display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
+.btn-sm{ font-size:11.5px; font-weight:700; padding:8px 14px; border-radius:9px; border:none; cursor:pointer; font-family:var(--font-head); background:var(--canopy-700); color:#fff; }
+.btn-sm.ghost{ background:#fff; border:1px solid var(--line); color:var(--canopy-700); }
+.btn-sm.warn{ background:var(--amber); color:#3E2E05; }
+.btn-sm.bad{ background:var(--rust); color:#fff; }
+.btn-sm:disabled{ opacity:.5; cursor:not-allowed; }
+
+/* technician cards */
+.tech-card{ background:rgba(255,255,255,0.78); border:1px solid var(--line); border-radius:16px; padding:16px 18px; box-shadow:var(--shadow); display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+.tech-avatar{ width:42px; height:42px; border-radius:50%; background:linear-gradient(145deg, var(--sky), var(--canopy-700)); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-family:var(--font-head); flex-shrink:0; }
+.tech-info{ flex:1; min-width:0; }
+.tech-name{ font-weight:700; font-size:13.5px; color:var(--canopy-900); }
+.tech-sub{ font-size:11.5px; color:#5C7C6C; margin-top:2px; }
+.tech-status{ font-size:10px; font-weight:800; padding:4px 10px; border-radius:100px; text-transform:uppercase; }
+.tech-status.available{ background:#DDF3E4; color:var(--canopy-700); }
+.tech-status.busy{ background:#FBF0DC; color:#8A6414; }
+.tech-status.offline{ background:#F1F1EC; color:#6B7A70; }
+
+/* drone / upload */
+.upload-zone{ border:2px dashed var(--line); border-radius:16px; padding:28px; text-align:center; background:rgba(255,255,255,0.55); cursor:pointer; transition:.15s; }
+.upload-zone:hover{ background:var(--leaf-100); border-color:var(--leaf-400); }
+.upload-zone svg{ width:28px; height:28px; color:var(--canopy-700); margin-bottom:8px; }
+.upload-zone .u-title{ font-weight:700; font-size:13px; color:var(--canopy-900); }
+.upload-zone .u-sub{ font-size:11.5px; color:#5C7C6C; margin-top:3px; }
+.thumb-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+.thumb{ width:96px; height:72px; border-radius:10px; background:linear-gradient(145deg,#3E5D4E,#0C3626); display:flex; align-items:center; justify-content:center; color:#A9DCC0; font-size:10px; font-weight:700; position:relative; overflow:hidden; border:1px solid var(--line); }
+.thumb svg{ width:22px; height:22px; opacity:.8; }
+.thumb .tlabel{ position:absolute; bottom:3px; left:5px; font-size:8.5px; font-family:var(--font-mono); color:#DDF3E4; }
+
+/* AI analysis progress */
+.ai-steps{ display:flex; flex-direction:column; gap:10px; margin-top:14px; }
+.ai-step{ display:flex; align-items:center; gap:10px; font-size:12.5px; color:#8AA093; opacity:.5; transition:.25s; }
+.ai-step.active{ opacity:1; color:var(--canopy-900); font-weight:600; }
+.ai-step.done{ opacity:1; color:var(--canopy-700); }
+.ai-step .dotwrap{ width:18px; height:18px; border-radius:50%; border:2px solid var(--line); flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.ai-step.active .dotwrap{ border-color:var(--leaf-400); animation:pulseDot 1s infinite; }
+.ai-step.done .dotwrap{ background:var(--leaf-400); border-color:var(--leaf-400); }
+@keyframes pulseDot{ 0%,100%{box-shadow:0 0 0 0 rgba(82,183,136,0.4);} 50%{box-shadow:0 0 0 5px rgba(82,183,136,0);} }
+
+.confidence-bar{ height:9px; border-radius:100px; background:#EDF4EF; overflow:hidden; margin-top:6px; }
+.confidence-fill{ height:100%; border-radius:100px; background:linear-gradient(90deg,var(--amber),var(--leaf-400)); transition:width .6s ease; }
+.ai-result-box{ background:var(--leaf-100); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin-top:14px; }
+.ai-result-box .ar-title{ font-weight:700; font-size:14px; color:var(--canopy-900); display:flex; align-items:center; gap:8px; }
+.ai-disclaimer{ font-size:10.5px; color:#5C7C6C; margin-top:10px; line-height:1.6; font-style:italic; }
+
+/* verification panel */
+.verify-btns{ display:flex; gap:10px; flex-wrap:wrap; margin:14px 0; }
+.vbtn{ flex:1; min-width:130px; padding:12px; border-radius:12px; border:1.5px solid var(--line); background:#fff; font-weight:700; font-size:12.5px; font-family:var(--font-head); cursor:pointer; color:var(--canopy-700); }
+.vbtn.confirm.sel{ background:var(--canopy-700); color:#fff; border-color:var(--canopy-700); }
+.vbtn.reject.sel{ background:var(--rust); color:#fff; border-color:var(--rust); }
+.vbtn.further.sel{ background:var(--amber); color:#3E2E05; border-color:var(--amber); }
+
+/* products & orders */
+.product-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
+.product-card{ background:rgba(255,255,255,0.78); border:1px solid var(--line); border-radius:16px; padding:17px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:6px; }
+.product-cat{ font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:.4px; color:var(--sky); }
+.product-name{ font-weight:700; font-size:14.5px; color:var(--canopy-900); font-family:var(--font-head); }
+.product-desc{ font-size:11.5px; color:#5C7C6C; line-height:1.5; }
+.product-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:8px; }
+.product-price{ font-family:var(--font-mono); font-weight:700; color:var(--canopy-900); }
+.product-avail{ font-size:10px; font-weight:700; color:var(--canopy-700); }
+
+/* timeline (farm history) */
+.timeline{ position:relative; padding-left:26px; margin-top:10px; }
+.timeline::before{ content:''; position:absolute; left:7px; top:4px; bottom:4px; width:2px; background:var(--line); }
+.tl-item{ position:relative; padding-bottom:22px; }
+.tl-item::before{ content:''; position:absolute; left:-26px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--leaf-400); border:3px solid var(--mist); }
+.tl-item.bad::before{ background:var(--rust); }
+.tl-item.warn::before{ background:var(--amber); }
+.tl-date{ font-family:var(--font-mono); font-size:10.5px; color:#8AA093; font-weight:700; text-transform:uppercase; }
+.tl-title{ font-weight:700; font-size:13px; color:var(--canopy-900); margin-top:2px; }
+.tl-desc{ font-size:12px; color:#5C7C6C; margin-top:2px; }
+
+/* voice assistant */
+.voice-orb-wrap{ display:flex; flex-direction:column; align-items:center; gap:14px; padding:26px 0 10px; }
+.voice-orb{ width:96px; height:96px; border-radius:50%; background:radial-gradient(circle at 32% 28%, var(--leaf-400), var(--canopy-700) 78%); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 30px rgba(45,134,89,0.35); transition:.2s; border:none; }
+.voice-orb svg{ width:34px; height:34px; color:#fff; }
+.voice-orb.listening{ animation:orbPulse 1.1s infinite; }
+@keyframes orbPulse{ 0%{box-shadow:0 0 0 0 rgba(82,183,136,0.5);} 70%{box-shadow:0 0 0 22px rgba(82,183,136,0);} 100%{box-shadow:0 0 0 0 rgba(82,183,136,0);} }
+.voice-state{ font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--canopy-700); letter-spacing:.3px; min-height:16px; }
+.voice-hint{ font-size:11px; color:#8AA093; text-align:center; max-width:320px; }
+.fab-voice{ position:fixed; right:26px; bottom:26px; width:56px; height:56px; border-radius:50%; background:linear-gradient(145deg,var(--leaf-400),var(--canopy-700)); border:none; box-shadow:var(--shadow-lg); display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:120; }
+.fab-voice svg{ width:24px; height:24px; color:#fff; }
 </style>
 </head>
 <body>
@@ -616,7 +729,7 @@ body.role-admin .nav-item.admin-only{ display:flex; }
 
     <div class="field" style="margin-top:22px;">
       <label data-i18n="login_username_label">Username</label>
-      <input id="loginUser" placeholder="e.g. farmer or admin" autocomplete="username">
+      <input id="loginUser" placeholder="e.g. farmer, admin or technician01" autocomplete="username">
     </div>
     <div class="field" style="margin-top:14px;">
       <label data-i18n="login_password_label">Password</label>
@@ -627,7 +740,10 @@ body.role-admin .nav-item.admin-only{ display:flex; }
     <button class="btn-primary" id="loginBtn" style="width:100%; margin-top:18px;" onclick="attemptLogin()" data-i18n="login_btn">Login</button>
 
     <div class="login-hint">
-      
+      DEMO ACCOUNTS<br>
+      Farmer &nbsp;→&nbsp; farmer / farmer123<br>
+      Admin &nbsp;→&nbsp; admin / admin123<br>
+      Technician → technician01 / tech123
       <div style="margin-top:6px; opacity:.75;" data-i18n="login_hint">Prototype credentials for hackathon demo only—roles are automatically assigned based on the account. This prototype is built for the Smart India Hackathon (SIH).</div>
     </div>
   </div>
@@ -675,6 +791,58 @@ body.role-admin .nav-item.admin-only{ display:flex; }
   </div>
 </div>
 
+<!-- ================= MODAL: REPORT CROP PROBLEM ================= -->
+<div class="modal-overlay" id="reportProblemModal">
+  <div class="modal-box">
+    <h3>Report Crop Problem</h3>
+    <div class="field"><label>Farm</label><select id="rpFarm"></select></div>
+    <div class="field" style="margin-top:12px;"><label>Field</label><input id="rpField" placeholder="e.g. Field 2"></div>
+    <div class="field" style="margin-top:12px;"><label>Crop</label><input id="rpCrop" placeholder="e.g. Tomato"></div>
+    <div class="field" style="margin-top:12px;"><label>Problem Type</label>
+      <select id="rpType"><option>Pest / Worm Damage</option><option>Leaf Disease</option><option>Wilting / Water Stress</option><option>Nutrient Deficiency</option><option>Other</option></select>
+    </div>
+    <div class="field" style="margin-top:12px;"><label>Description</label><textarea id="rpDesc" placeholder="Describe what you're seeing..."></textarea></div>
+    <div class="field" style="margin-top:12px;"><label>Priority</label>
+      <select id="rpPriority"><option>Medium</option><option>High</option><option>Low</option></select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeModal('reportProblemModal')">Cancel</button>
+      <button class="btn-primary" onclick="submitReportProblem()">Submit Request</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: ASSIGN TECHNICIAN ================= -->
+<div class="modal-overlay" id="assignTechModal">
+  <div class="modal-box">
+    <h3>Assign Technician</h3>
+    <div class="field"><label>Technician</label><select id="atTech"></select></div>
+    <div class="field" style="margin-top:12px;"><label>Inspection Type</label>
+      <select id="atType"><option>Pest / Worm Detection</option><option>Disease Diagnosis</option><option>Irrigation Check</option><option>General Field Visit</option></select>
+    </div>
+    <div class="field" style="margin-top:12px;"><label>Priority</label><select id="atPriority"><option>Medium</option><option>High</option><option>Low</option></select></div>
+    <div class="field" style="margin-top:12px;"><label>Instructions</label><textarea id="atNotes" placeholder="Any notes for the technician..."></textarea></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeModal('assignTechModal')">Cancel</button>
+      <button class="btn-primary" onclick="submitAssignTech()">Assign</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: CREATE ORDER ================= -->
+<div class="modal-overlay" id="createOrderModal">
+  <div class="modal-box">
+    <h3>Create Product Order</h3>
+    <div class="field"><label>Product</label><select id="coProduct"></select></div>
+    <div class="field" style="margin-top:12px;"><label>Quantity</label><input id="coQty" type="number" value="1" min="1"></div>
+    <p style="font-size:11px; color:#5C7C6C; margin-top:10px; line-height:1.6;">This order will be linked to the case and sent to the farmer. AI never selects or purchases products independently — this requires your Admin approval.</p>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeModal('createOrderModal')">Cancel</button>
+      <button class="btn-primary" onclick="submitCreateOrder()">Place Order &amp; Resolve Case</button>
+    </div>
+  </div>
+</div>
+
 <div class="app" id="appRoot" style="display:none;">
 
   <!-- SIDEBAR -->
@@ -701,7 +869,11 @@ body.role-admin .nav-item.admin-only{ display:flex; }
       <div class="nav-item" data-view="weather"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a5 5 0 1 1 1.3-9.8 6 6 0 0 1 11.2 3A4.5 4.5 0 0 1 17.5 19Z"/></svg><span data-i18n="nav_weather">Weather Intelligence</span></div>
       <div class="nav-item" data-view="analytics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9m6 10V4m6 15v-7"/></svg><span data-i18n="nav_analytics">Water Analytics</span></div>
       <div class="nav-item" data-view="farmmap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20 3 17V4l6 3m0 13 6-3m-6 3V7m6 10 6 3V7l-6-3m0 13V4m0 3-6-3"/></svg><span data-i18n="nav_farmmap">Farm Map</span></div>
+      <div class="nav-item" data-view="cropinspect"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M4.9 19h14.2a1.8 1.8 0 0 0 1.6-2.7L13.6 4.5a1.8 1.8 0 0 0-3.2 0L3.3 16.3A1.8 1.8 0 0 0 4.9 19Z"/></svg><span data-i18n="nav_cropinspect">Crop Inspection</span></div>
+      <div class="nav-item" data-view="techreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c1.2-3.6 3.8-5 7-5s5.8 1.4 7 5"/><path d="M19 8h-2M18 7v2"/></svg><span data-i18n="nav_techreq">Technician Requests</span></div>
+      <div class="nav-item" data-view="orders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h2l1.5 12.5A2 2 0 0 0 9.5 18h8a2 2 0 0 0 2-1.7L21 8H6.2"/><circle cx="10" cy="21" r="1.3"/><circle cx="18" cy="21" r="1.3"/></svg><span data-i18n="nav_orders">Orders</span></div>
       <div class="nav-item" data-view="notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span data-i18n="nav_notifications">Notifications</span><span class="nav-badge" id="notifBadgeFarmer">0</span></div>
+      <div class="nav-item" data-view="farmhistory"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/><path d="M12 7v5l4 2"/></svg><span data-i18n="nav_farmhistory">Farm History</span></div>
       <div class="nav-item" data-view="reports"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6Z"/><path d="M14 2v6h6"/></svg><span data-i18n="nav_reports">Reports</span></div>
       <div class="nav-item" data-view="profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg><span data-i18n="nav_profile">Profile</span></div>
       <div class="nav-item" data-view="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 13a7.7 7.7 0 0 0 0-2l2-1.5-2-3.4-2.3.9a7.6 7.6 0 0 0-1.7-1L15 3h-4l-.4 2.4a7.6 7.6 0 0 0-1.7 1l-2.3-.9-2 3.4L6.6 11a7.7 7.7 0 0 0 0 2l-2 1.6 2 3.4 2.3-.9c.5.4 1.1.8 1.7 1L11 21h4l.4-2.4c.6-.2 1.2-.6 1.7-1l2.3.9 2-3.4-2-1.5Z"/></svg><span data-i18n="nav_settings">Settings</span></div>
@@ -717,6 +889,9 @@ body.role-admin .nav-item.admin-only{ display:flex; }
       <div class="nav-item" data-view="devicemgmt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 6h6M9 18h6"/></svg><span data-i18n="nav_devicemgmt">ESP32 Devices</span></div>
       <div class="nav-item" data-view="irrigmonitor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s7 7.5 7 12.5a7 7 0 1 1-14 0C5 9.5 12 2 12 2Z"/></svg><span data-i18n="nav_irrigmonitor">Irrigation Monitoring</span></div>
       <div class="nav-item" data-view="farmermonitor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg><span data-i18n="nav_farmermonitor">Farmer Monitoring</span></div>
+      <div class="nav-item" data-view="admininspreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M4.9 19h14.2a1.8 1.8 0 0 0 1.6-2.7L13.6 4.5a1.8 1.8 0 0 0-3.2 0L3.3 16.3A1.8 1.8 0 0 0 4.9 19Z"/></svg><span data-i18n="nav_admininspreq">Inspection Requests</span><span class="nav-badge" id="notifBadgeInsp">0</span></div>
+      <div class="nav-item" data-view="admintechs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c1.2-3.6 3.8-5 7-5s5.8 1.4 7 5"/></svg><span data-i18n="nav_admintechs">Technicians</span></div>
+      <div class="nav-item" data-view="adminproducts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h2l1.5 12.5A2 2 0 0 0 9.5 18h8a2 2 0 0 0 2-1.7L21 8H6.2"/><circle cx="10" cy="21" r="1.3"/><circle cx="18" cy="21" r="1.3"/></svg><span data-i18n="nav_adminproducts">Products &amp; Orders</span></div>
       <div class="nav-item" data-view="notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span data-i18n="nav_notifications">Notifications</span><span class="nav-badge" id="notifBadgeAdmin">0</span></div>
       <div class="nav-item" data-view="sysanalytics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9m6 10V4m6 15v-7"/></svg><span data-i18n="nav_sysanalytics">System Analytics</span></div>
       <div class="nav-item" data-view="reports"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6Z"/><path d="M14 2v6h6"/></svg><span data-i18n="nav_reports">Reports</span></div>
@@ -725,7 +900,18 @@ body.role-admin .nav-item.admin-only{ display:flex; }
       <div class="nav-item logout-item" onclick="logout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg><span data-i18n="nav_logout">Logout</span></div>
     </nav>
 
-    
+    <!-- TECHNICIAN NAV -->
+    <nav class="nav" id="navTechnician" style="display:none;">
+      <div class="nav-item active" data-view="techdash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg><span>Dashboard</span></div>
+      <div class="nav-item" data-view="techassign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>My Assignments</span></div>
+      <div class="nav-item" data-view="techcase"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Drone &amp; AI Inspection</span></div>
+      <div class="nav-item" data-view="techhistory"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/><path d="M12 7v5l4 2"/></svg><span>Inspection History</span></div>
+      <div class="nav-item" data-view="notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span>Notifications</span><span class="nav-badge" id="notifBadgeTech">0</span></div>
+      <div class="nav-item" data-view="techprofile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg><span>Profile</span></div>
+      <div class="nav-item logout-item" onclick="logout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg><span>Logout</span></div>
+    </nav>
+
+    <div class="sidebar-foot" id="sidebarFoot">Logged in as <b>farmer</b><br>National Hackathon Build v1.0</div>
   </aside>
 
   <!-- MAIN -->
@@ -859,7 +1045,7 @@ body.role-admin .nav-item.admin-only{ display:flex; }
             <div class="simple-list" style="margin-top:14px;">
               <div class="simple-row"><div><div class="t">Crop</div><div class="s" id="cropmonCropLabel">Paddy — Zone B</div></div></div>
               <div class="simple-row"><div><div class="t">Growth Stage</div><div class="s">Vegetative</div></div></div>
-              <div class="simple-row"><div><div class="t">Planting Date</div><div class="s">29 Jun 2026</div></div></div>
+              <div class="simple-row"><div><div class="t">Planting Date</div><div class="s">18 Jun 2026</div></div></div>
               <div class="simple-row"><div><div class="t">Expected Harvest Date</div><div class="s">24 Oct 2026</div></div></div>
               <div class="simple-row"><div><div class="t">Water Requirement</div><div class="s">High</div></div></div>
               <div class="simple-row"><div><div class="t">Nutrient Status</div><div class="s">Adequate <span class="src-tag ai">AI Estimated</span></div></div></div>
@@ -996,7 +1182,16 @@ body.role-admin .nav-item.admin-only{ display:flex; }
 
       <!-- ================= ASSISTANT ================= -->
       <section class="view" id="view-assistant">
-        <div class="view-head"><div><h1>AI Agriculture Assistant</h1><p>Ask anything about crops, irrigation, pests or soil health</p></div></div>
+        <div class="view-head"><div><h1>AI Voice &amp; Agriculture Assistant</h1><p>Speak or type — ask about weather, sensors, crops, motors, inspections, orders and more</p></div></div>
+        <div class="card" style="margin-bottom:18px;">
+          <div class="voice-orb-wrap">
+            <button class="voice-orb" id="voiceOrb" onclick="toggleVoice()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3"/></svg>
+            </button>
+            <div class="voice-state" id="voiceState">Tap to speak</div>
+            <div class="voice-hint">Try: "What is the temperature today?" · "Turn on Motor 2 for 20 minutes" · "What is happening in my farm?"</div>
+          </div>
+        </div>
         <div class="chat-wrap">
           <div class="chat-log" id="chatLog">
             <div class="msg bot">Hello HardHackers 👋 I'm your AI Agriculture Assistant. Ask me anything about crops, irrigation schedules, fertilizers, or pest control.</div>
@@ -1064,7 +1259,7 @@ body.role-admin .nav-item.admin-only{ display:flex; }
           <button class="nf-btn" data-f="warn" onclick="filterNotifs('warn')">🟡 Warning</button>
           <button class="nf-btn" data-f="info" onclick="filterNotifs('info')">🟢 Info</button>
         </div>
-        <div class="notif-center" id="notifCenter"></div>   
+        <div class="notif-center" id="notifCenter"></div>
       </section>
 
       <!-- ================= ADMIN: FARMERS & FARMS MANAGEMENT ================= -->
@@ -1158,6 +1353,27 @@ body.role-admin .nav-item.admin-only{ display:flex; }
         </div>
       </section>
 
+      <!-- ================= ADMIN: INSPECTION REQUESTS / CASE MANAGEMENT ================= -->
+      <section class="view" id="view-admininspreq">
+        <div class="view-head"><div><h1>Inspection Requests <span class="admin-badge">Admin Only</span></h1><p>Farmer-reported crop problems — assign a technician, review AI results, approve resolution</p></div></div>
+        <div id="adminCaseList"></div>
+      </section>
+
+      <!-- ================= ADMIN: TECHNICIANS ================= -->
+      <section class="view" id="view-admintechs">
+        <div class="view-head"><div><h1>Technicians <span class="admin-badge">Admin Only</span></h1><p>Field technician roster, availability and assignment load</p></div></div>
+        <div id="adminTechList"></div>
+      </section>
+
+      <!-- ================= ADMIN: PRODUCTS & ORDERS ================= -->
+      <section class="view" id="view-adminproducts">
+        <div class="view-head"><div><h1>Products &amp; Orders <span class="admin-badge">Admin Only</span></h1><p>Approved agricultural products catalog and every order placed against a case</p></div></div>
+        <div class="section-label">Product Catalog</div>
+        <div class="product-grid" id="adminProductGrid"></div>
+        <div class="section-label">All Orders</div>
+        <div class="card"><table class="sh-table" id="adminOrderTable"><thead><tr><th>Order ID</th><th>Farmer</th><th>Product</th><th>Qty</th><th>Case</th><th>Status</th><th>Date</th></tr></thead><tbody></tbody></table></div>
+      </section>
+
       <!-- ================= WEATHER ================= -->
       <section class="view" id="view-weather">
         <div class="view-head"><div><h1>Live Weather</h1><p>Hyperlocal conditions for your farm coordinates</p></div></div>
@@ -1198,6 +1414,39 @@ body.role-admin .nav-item.admin-only{ display:flex; }
       <section class="view" id="view-farmmap">
         <div class="view-head"><div><h1>Farm Map</h1><p>Zone-by-zone crop, moisture and root health status</p></div></div>
         <div class="zone-grid" id="zoneGrid"></div>
+      </section>
+
+      <!-- ================= FARMER: CROP INSPECTION / REPORT PROBLEM ================= -->
+      <section class="view" id="view-cropinspect">
+        <div class="view-head">
+          <div><h1>Crop Inspection</h1><p>Report a crop problem — it flows straight to Admin, a Technician, drone inspection and AI analysis</p></div>
+          <button class="btn-primary" onclick="openReportModal()">+ Report Crop Problem</button>
+        </div>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-title">🔎 How it works</div>
+          <p style="font-size:12.5px; color:#3E5D4E; line-height:1.7; margin-top:8px;">
+            Report Problem → Admin reviews → Technician assigned → Drone inspection & AI image analysis → Technician verification → Admin approval → Product order (if needed) → Case resolved → stored in Farm History.
+          </p>
+        </div>
+        <div id="farmerCaseList"></div>
+      </section>
+
+      <!-- ================= FARMER: TECHNICIAN REQUESTS ================= -->
+      <section class="view" id="view-techreq">
+        <div class="view-head"><div><h1>Technician Requests</h1><p>Status of every technician assignment made against your inspection requests</p></div></div>
+        <div id="farmerTechReqList"></div>
+      </section>
+
+      <!-- ================= FARMER: ORDERS ================= -->
+      <section class="view" id="view-orders">
+        <div class="view-head"><div><h1>My Orders</h1><p>Agricultural products ordered by Admin on your behalf, linked to resolved cases</p></div></div>
+        <div id="farmerOrderList"></div>
+      </section>
+
+      <!-- ================= FARMER: FARM HISTORY ================= -->
+      <section class="view" id="view-farmhistory">
+        <div class="view-head"><div><h1>Farm History</h1><p>Complete timeline — irrigation, sensors, inspections, AI results and resolutions</p></div></div>
+        <div class="card"><div class="timeline" id="farmHistoryTimeline"></div></div>
       </section>
 
       <!-- ================= ADMIN: SYSTEM ANALYTICS ================= -->
@@ -1258,9 +1507,105 @@ body.role-admin .nav-item.admin-only{ display:flex; }
         </div>
       </section>
 
+      <!-- ================= TECHNICIAN: DASHBOARD ================= -->
+      <section class="view" id="view-techdash">
+        <div class="view-head"><div><h1>Technician Dashboard</h1><p>Good day, Technician — here's your workload across all assigned farms</p></div></div>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="stat-label">Assigned Inspections</div><div class="stat-value" id="techStatAssigned">0</div></div>
+          <div class="stat-card"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3M21 12a9 9 0 1 1-9-9"/></svg></div><div class="stat-label">In Progress</div><div class="stat-value" id="techStatProgress">0</div></div>
+          <div class="stat-card"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div><div class="stat-label">Completed</div><div class="stat-value" id="techStatCompleted">0</div></div>
+          <div class="stat-card"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M4.9 19h14.2a1.8 1.8 0 0 0 1.6-2.7L13.6 4.5a1.8 1.8 0 0 0-3.2 0L3.3 16.3A1.8 1.8 0 0 0 4.9 19Z"/></svg></div><div class="stat-label">Confirmed Problems</div><div class="stat-value" id="techStatConfirmed">0</div></div>
+        </div>
+        <div class="section-label">Your Assignments</div>
+        <div id="techDashList"></div>
+      </section>
+
+      <!-- ================= TECHNICIAN: MY ASSIGNMENTS ================= -->
+      <section class="view" id="view-techassign">
+        <div class="view-head"><div><h1>My Assignments</h1><p>Every case assigned to you — open one to begin the drone &amp; AI inspection</p></div></div>
+        <div id="techAssignList"></div>
+      </section>
+
+      <!-- ================= TECHNICIAN: DRONE + AI INSPECTION WORKSPACE ================= -->
+      <section class="view" id="view-techcase">
+        <div class="view-head"><div><h1>Inspection Workspace</h1><p id="techCaseSub">Select an assignment from "My Assignments" to begin</p></div></div>
+        <div id="techCaseEmpty" class="card">
+          <p style="font-size:13px; color:#5C7C6C;">No case is open yet. Go to <b>My Assignments</b> and click <b>Open Case</b> on any assignment.</p>
+        </div>
+        <div id="techCaseBody" style="display:none;">
+          <div class="dash-grid">
+            <div class="card">
+              <div class="card-title">📋 Case Details</div>
+              <div class="simple-list" style="margin-top:12px;" id="techCaseInfo"></div>
+            </div>
+            <div class="card">
+              <div class="card-title">🚁 Drone Image Upload</div>
+              <div class="upload-zone" onclick="simulateDroneUpload()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4m0 0 4 4m-4-4-4 4"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+                <div class="u-title">Upload / Simulate Drone Images</div>
+                <div class="u-sub">Demo mode — click to add sample drone captures of the affected zone</div>
+              </div>
+              <div class="thumb-row" id="droneThumbRow"></div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:20px;">
+            <div class="card-title">🤖 AI Vision Analysis</div>
+            <button class="btn-primary" style="margin-top:12px;" id="runAiBtn" onclick="runAiAnalysis()" disabled>Analyze with AgriSense AI</button>
+            <div class="ai-steps" id="aiStepsBox" style="display:none;">
+              <div class="ai-step" data-s="0"><span class="dotwrap"></span>Analyzing Image...</div>
+              <div class="ai-step" data-s="1"><span class="dotwrap"></span>Detecting Crop...</div>
+              <div class="ai-step" data-s="2"><span class="dotwrap"></span>Checking Visible Damage...</div>
+              <div class="ai-step" data-s="3"><span class="dotwrap"></span>Identifying Possible Pests...</div>
+              <div class="ai-step" data-s="4"><span class="dotwrap"></span>Generating Report...</div>
+            </div>
+            <div class="ai-result-box" id="aiResultBox" style="display:none;"></div>
+          </div>
+
+          <div class="card" style="margin-top:20px;" id="techVerifyCard" style="display:none;">
+            <div class="card-title">✅ Technician Verification</div>
+            <p style="font-size:12px; color:#5C7C6C; margin-top:6px;">The AI result is decision support only. Confirm what you physically observed in the field.</p>
+            <div class="verify-btns" id="verifyBtns">
+              <button class="vbtn confirm" onclick="setVerifyChoice('confirm')">✅ Confirm</button>
+              <button class="vbtn reject" onclick="setVerifyChoice('reject')">❌ Reject</button>
+              <button class="vbtn further" onclick="setVerifyChoice('further')">🔍 Requires Further Inspection</button>
+            </div>
+            <div class="field"><label>Actual Severity</label><select id="vfSeverity"><option>Low</option><option selected>Moderate</option><option>High</option></select></div>
+            <div class="field" style="margin-top:12px;"><label>Affected Area (%)</label><input id="vfArea" type="number" value="15" min="0" max="100"></div>
+            <div class="field" style="margin-top:12px;"><label>Observation</label><textarea id="vfObs" placeholder="What did you see on-site?"></textarea></div>
+            <div class="field" style="margin-top:12px;"><label>Recommended Action</label><textarea id="vfAction" placeholder="e.g. Apply approved neem-based pesticide, monitor for 5 days"></textarea></div>
+            <button class="btn-primary" style="margin-top:14px;" onclick="submitInspectionReport()">Submit Inspection Report</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TECHNICIAN: HISTORY ================= -->
+      <section class="view" id="view-techhistory">
+        <div class="view-head"><div><h1>Inspection History</h1><p>Every case you've completed and verified</p></div></div>
+        <div id="techHistoryList"></div>
+      </section>
+
+      <!-- ================= TECHNICIAN: PROFILE ================= -->
+      <section class="view" id="view-techprofile">
+        <div class="view-head"><div><h1>Technician Profile</h1></div></div>
+        <div class="card">
+          <div class="simple-list">
+            <div class="simple-row"><div><div class="t">Name</div><div class="s" id="techProfName">Technician 02</div></div></div>
+            <div class="simple-row"><div><div class="t">Technician ID</div><div class="s" id="techProfId">TECH-02</div></div></div>
+            <div class="simple-row"><div><div class="t">Specialization</div><div class="s">Pest &amp; Disease Field Verification, Drone-Assisted Inspection</div></div></div>
+            <div class="simple-row"><div><div class="t">Availability</div><div class="s">Available</div></div></div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </div>
 </div>
+
+<!-- Floating Voice Assistant FAB -->
+<button class="fab-voice" id="voiceFab" title="AI Voice Assistant" onclick="document.querySelector('.nav-item[data-view=assistant]')?.click()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3"/></svg>
+</button>
 
 <script>
 /* ---------------- LANGUAGE / i18n ---------------- */
@@ -1889,8 +2234,9 @@ if(sysGridAdmin) sysGridAdmin.innerHTML = sysStatus.map(s=>`
 
 /* ---------------- LOGIN / AUTHENTICATION ---------------- */
 const ACCOUNTS = {
-  farmer: { password: 'farmer123', role: 'farmer' },
-  admin:  { password: 'admin123',  role: 'admin'  },
+  farmer:      { password: 'farmer123', role: 'farmer' },
+  admin:       { password: 'admin123',  role: 'admin'  },
+  technician01:{ password: 'tech123',   role: 'technician' },
 };
 let currentRole = null;
 
@@ -1930,7 +2276,7 @@ function attemptLogin(){
       document.getElementById('farmSelectScreen').style.display = 'flex';
     } else {
       document.getElementById('appRoot').style.display = 'flex';
-      setRole('admin');
+      setRole(account.role);
     }
   } else {
     errBox.classList.add('show');
@@ -2044,17 +2390,27 @@ function setRole(role){
   document.body.classList.toggle('role-admin', role==='admin');
   document.getElementById('navFarmer').style.display = role==='farmer' ? 'flex' : 'none';
   document.getElementById('navAdmin').style.display = role==='admin' ? 'flex' : 'none';
+  document.getElementById('navTechnician').style.display = role==='technician' ? 'flex' : 'none';
+  document.getElementById('voiceFab').style.display = role==='farmer' ? 'flex' : 'none';
 
   const avatar = document.getElementById('topAvatar');
   const farmLine = document.getElementById('farmLine');
   const foot = document.getElementById('sidebarFoot');
   const switcher = document.getElementById('farmSwitcher');
-  if(role==='admin'){
+  if(role==='technician'){
+    avatar.textContent = 'T2';
+    farmLine.textContent = 'Technician 02 · Field Verification & Drone Inspection';
+    switcher.style.display = 'none';
+    foot.innerHTML = 'Logged in as <b>technician</b><br>National Hackathon Build v1.0';
+    document.querySelector('#navTechnician .nav-item[data-view="techdash"]').click();
+    renderTechAll();
+  } else if(role==='admin'){
     avatar.textContent = 'AD';
     farmLine.textContent = 'System Admin · All Farmers, Farms & Devices';
     switcher.style.display = 'none';
     foot.innerHTML = 'Logged in as <b>admin</b><br>National Hackathon Build v1.0';
     document.querySelector('#navAdmin .nav-item[data-view="farmers"]').click();
+    renderAdminCaseData();
   } else {
     avatar.textContent = 'HH';
     farmLine.textContent = `${currentFarm.name} — ${currentFarm.crop} · Farmer: HardHackers`;
@@ -2066,6 +2422,7 @@ function setRole(role){
     const settingsFarm = document.getElementById('settingsFarmLabel');
     if(settingsFarm) settingsFarm.textContent = `${currentFarm.name} · ${currentFarm.area} · ${currentFarm.soilType||'Tamil Nadu'}`;
     document.querySelector('#navFarmer .nav-item[data-view="dashboard"]').click();
+    renderFarmerCaseData();
   }
   renderNotifCenter();
 }
@@ -2123,7 +2480,7 @@ function renderNotifCenter(){
     }).join('') || `<p style="color:#7A8B82; font-size:13px;">No notifications in this category.</p>`;
   }
   const unread = notifications.filter(n=>!n.read).length;
-  ['notifBadgeFarmer','notifBadgeAdmin'].forEach(id=>{
+  ['notifBadgeFarmer','notifBadgeAdmin','notifBadgeTech'].forEach(id=>{
     const badge = document.getElementById(id);
     if(badge){ badge.textContent = unread; badge.dataset.zero = unread===0 ? '1':'0'; }
   });
@@ -2272,6 +2629,523 @@ const rootRecList = document.getElementById('rootRecList');
 if(rootRecList){
   rootRecList.innerHTML = rootRecs.map(r=>`<div class="rec-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3M21 12a9 9 0 1 1-9-9"/></svg><span>${r}</span></div>`).join('');
 }
+
+/* =====================================================================
+   TECHNICIANS · DRONE/AI INSPECTION · PRODUCTS & ORDERS · CASE MANAGEMENT
+   ===================================================================== */
+
+/* ---------------- TECHNICIANS ---------------- */
+const technicians = [
+  { id:'TECH-01', name:'Technician 01', status:'available', activeAssignments:0, completed:14 },
+  { id:'TECH-02', name:'Technician 02', status:'available', activeAssignments:1, completed:9  },
+  { id:'TECH-03', name:'Technician 03', status:'offline',   activeAssignments:0, completed:6  },
+];
+const CURRENT_TECH_ID = 'TECH-02'; // account technician01 logs in as Technician 02 for this demo
+
+/* ---------------- PRODUCTS ---------------- */
+const products = [
+  { id:'P1', name:'Neem-Based Bio Pesticide', category:'Approved Pest Management', desc:'Organic, low-toxicity spray effective against caterpillar and aphid damage.', price:'₹420 / L', availability:'In Stock', supplier:'AgroCare Ltd.' },
+  { id:'P2', name:'NPK 19:19:19 Fertilizer', category:'Fertilizers', desc:'Balanced water-soluble fertilizer for vegetative growth stage crops.', price:'₹1,150 / 25kg', availability:'In Stock', supplier:'Tamil Nadu Agro Suppliers' },
+  { id:'P3', name:'Hybrid Tomato Seeds', category:'Seeds', desc:'Disease-resistant hybrid variety suited for red and sandy loam soils.', price:'₹680 / packet', availability:'In Stock', supplier:'SeedTech India' },
+  { id:'P4', name:'Gypsum Soil Amendment', category:'Soil Amendments', desc:'Improves soil structure and corrects calcium/sulfur deficiency.', price:'₹340 / 50kg', availability:'Limited Stock', supplier:'AgroCare Ltd.' },
+  { id:'P5', name:'Yellow Sticky Pest Traps (x50)', category:'Agricultural Supplies', desc:'Non-chemical monitoring and control for whiteflies and aphids.', price:'₹550 / pack', availability:'In Stock', supplier:'FarmGuard Supplies' },
+  { id:'P6', name:'Drip Irrigation Kit (0.5 acre)', category:'Farm Equipment', desc:'Complete drip layout with emitters, filters and a 1" mainline.', price:'₹8,900', availability:'In Stock', supplier:'IrriTech Systems' },
+];
+
+/* ---------------- ORDERS ---------------- */
+let orderIdSeq = 100;
+const orders = [];
+
+/* ---------------- CASE MANAGEMENT (central pipeline object) ---------------- */
+let caseIdSeq = 3;
+const cases = [
+  { id:'AGRI-001', farmerName:'HardHackers', farmName:'Farm 2', field:'Field 2', crop:'Tomato',
+    problemType:'Pest / Worm Damage', description:'Small holes appearing on tomato leaves, some fruit damage in the corner of the field.',
+    priority:'Medium', date:'22 Aug', status:'resolved', technicianId:'TECH-02', technicianName:'Technician 02',
+    aiResult:{ problem:'Possible Caterpillar / Worm Damage', confidence:87, severity:'Moderate', affectedArea:15 },
+    verification:{ decision:'confirm', severity:'Moderate', affectedArea:15, observation:'Visible caterpillar damage found in Zone B3, consistent with AI flag.', action:'Apply approved neem-based bio pesticide and monitor for 5 days.' },
+    orderId:null,
+    timeline:[
+      {date:'22 Aug', text:'Crop problem reported by farmer via Crop Inspection page.'},
+      {date:'22 Aug', text:'Admin assigned Technician 02 for Pest/Worm Detection.'},
+      {date:'23 Aug', text:'Technician uploaded drone images of affected zone.'},
+      {date:'23 Aug', text:'AI detected possible Caterpillar/Worm Damage — 87% confidence.'},
+      {date:'23 Aug', text:'Technician physically confirmed the AI result on-site.'},
+      {date:'24 Aug', text:'Admin approved case and ordered Neem-Based Bio Pesticide.'},
+      {date:'25 Aug', text:'Order delivered — case marked Resolved.'},
+    ] },
+  { id:'AGRI-002', farmerName:'HardHackers', farmName:'Farm 1', field:'Field 1', crop:'Rice',
+    problemType:'Wilting / Water Stress', description:'Patches of the paddy field look yellow and dry despite recent irrigation.',
+    priority:'Medium', date:'21 Aug', status:'assigned', technicianId:'TECH-02', technicianName:'Technician 02',
+    aiResult:null, verification:null, orderId:null,
+    timeline:[
+      {date:'21 Aug', text:'Crop problem reported by farmer via Crop Inspection page.'},
+      {date:'21 Aug', text:'Admin assigned Technician 02 — General Field Visit.'},
+    ] },
+];
+
+function nowLabel(){ return 'Just now'; }
+function statusMeta(s){
+  return {
+    new:{label:'New', css:'new'}, review:{label:'Under Review', css:'review'},
+    assigned:{label:'Assigned', css:'assigned'}, progress:{label:'In Progress', css:'progress'},
+    ai:{label:'AI Analysis', css:'ai'}, verify:{label:'Verification Submitted', css:'verify'},
+    completed:{label:'Completed', css:'completed'}, resolved:{label:'Resolved', css:'resolved'},
+  }[s] || {label:s, css:'waiting'};
+}
+function priCss(p){ return {High:'high', Medium:'medium', Low:'low'}[p] || 'medium'; }
+function addTimeline(c, text){ c.timeline.push({date:nowLabel(), text}); }
+
+function caseCardHTML(c, role){
+  const sm = statusMeta(c.status);
+  let actions = '';
+  if(role==='admin'){
+    if(c.status==='new'){
+      actions = `<button class="btn-sm" onclick="openAssignModalFor('${c.id}')">Assign Technician</button>`;
+    } else if(c.status==='verify'){
+      actions = `<button class="btn-sm" onclick="openCreateOrderModalFor('${c.id}')">Approve &amp; Order Product</button>
+                 <button class="btn-sm ghost" onclick="resolveWithoutOrder('${c.id}')">Mark Resolved (No Order)</button>`;
+    } else if(['assigned','progress','ai'].includes(c.status)){
+      actions = `<span style="font-size:11.5px; color:#8AA093;">Waiting on Technician ${c.technicianName||''}...</span>`;
+    }
+  }
+  if(role==='technician' && ['assigned','progress'].includes(c.status)){
+    actions = `<button class="btn-sm" onclick="openCaseWorkspace('${c.id}')">Open Case</button>`;
+  }
+  const aiLine = c.aiResult ? `<div class="case-meta"><span>AI: <b>${c.aiResult.problem}</b> (${c.aiResult.confidence}% confidence)</span></div>` : '';
+  return `<div class="case-card">
+    <div class="case-card-top">
+      <div class="case-id">${c.id} — ${c.crop} · ${c.field}, ${c.farmName}</div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <span class="pri-tag ${priCss(c.priority)}">${c.priority}</span>
+        <span class="case-status ${sm.css}">${sm.label}</span>
+      </div>
+    </div>
+    <div class="case-meta">
+      <span>Farmer: <b>${c.farmerName}</b></span>
+      <span>Problem: <b>${c.problemType}</b></span>
+      <span>Reported: <b>${c.date}</b></span>
+      ${c.technicianName ? `<span>Technician: <b>${c.technicianName}</b></span>` : ''}
+    </div>
+    ${aiLine}
+    <div class="case-meta" style="color:#3E5D4E;">${c.description}</div>
+    <div class="case-actions">${actions}</div>
+  </div>`;
+}
+
+/* ---------------- FARMER SIDE ---------------- */
+function openReportModal(){
+  const sel = document.getElementById('rpFarm');
+  sel.innerHTML = farms.map(f=>`<option>${f.name}</option>`).join('');
+  document.getElementById('rpField').value = '';
+  document.getElementById('rpCrop').value = '';
+  document.getElementById('rpDesc').value = '';
+  openModal('reportProblemModal');
+}
+function submitReportProblem(){
+  const farmName = document.getElementById('rpFarm').value;
+  const field = document.getElementById('rpField').value.trim() || 'Field 1';
+  const crop = document.getElementById('rpCrop').value.trim() || (farms.find(f=>f.name===farmName)?.crop || 'Crop');
+  const problemType = document.getElementById('rpType').value;
+  const description = document.getElementById('rpDesc').value.trim() || 'No additional description provided.';
+  const priority = document.getElementById('rpPriority').value;
+  caseIdSeq++;
+  const id = 'AGRI-' + String(caseIdSeq).padStart(3,'0');
+  const c = { id, farmerName:'HardHackers', farmName, field, crop, problemType, description, priority, date:'Today',
+    status:'new', technicianId:null, technicianName:null, aiResult:null, verification:null, orderId:null,
+    timeline:[{date:'Today', text:'Crop problem reported by farmer via Crop Inspection page.'}] };
+  cases.unshift(c);
+  closeModal('reportProblemModal');
+  pushNotification({ sev:'warn', title:`New Inspection Request — ${id}`, msg:`${crop} in ${field}, ${farmName}: ${problemType}. Awaiting Admin review and technician assignment.`, zone:field, sensor:'Crop Inspection', technical:`Case ${id} · Priority: ${priority}` });
+  renderFarmerCaseData();
+  renderAdminCaseData();
+}
+function renderFarmerCaseData(){
+  const myCases = cases.filter(c=>c.farmerName==='HardHackers');
+  const listEl = document.getElementById('farmerCaseList');
+  if(listEl) listEl.innerHTML = myCases.length ? myCases.map(c=>caseCardHTML(c,'farmer')).join('') : `<p style="font-size:13px;color:#8AA093;">No crop problems reported yet.</p>`;
+  const techReqEl = document.getElementById('farmerTechReqList');
+  if(techReqEl){
+    const assigned = myCases.filter(c=>c.technicianId);
+    techReqEl.innerHTML = assigned.length ? assigned.map(c=>caseCardHTML(c,'farmer')).join('') : `<p style="font-size:13px;color:#8AA093;">No technician has been assigned yet.</p>`;
+  }
+  const orderEl = document.getElementById('farmerOrderList');
+  if(orderEl){
+    const myOrders = orders.filter(o=>o.farmerName==='HardHackers');
+    orderEl.innerHTML = myOrders.length ? myOrders.map(o=>`
+      <div class="case-card">
+        <div class="case-card-top">
+          <div class="case-id">Order ${o.id} — ${o.productName}</div>
+          <span class="case-status ${o.status==='Delivered'?'resolved':'assigned'}">${o.status}</span>
+        </div>
+        <div class="case-meta"><span>Quantity: <b>${o.qty}</b></span><span>Linked Case: <b>${o.caseId}</b></span><span>Ordered: <b>${o.date}</b></span></div>
+      </div>`).join('') : `<p style="font-size:13px;color:#8AA093;">No orders placed yet.</p>`;
+  }
+  renderFarmHistory();
+}
+function renderFarmHistory(){
+  const el = document.getElementById('farmHistoryTimeline');
+  if(!el) return;
+  const myCases = cases.filter(c=>c.farmerName==='HardHackers');
+  let entries = [];
+  myCases.forEach(c=> c.timeline.forEach(t=> entries.push({date:t.date, title:`${c.id} · ${c.crop}, ${c.field}`, desc:t.text, sev:'info'})));
+  entries.push({date:'Ongoing', title:'Irrigation Activity', desc:'Motor 1 & Motor 3 currently running under Auto Moisture mode across Zone A and Zone C.', sev:'info'});
+  entries.push({date:'Ongoing', title:'Sensor Network', desc:'All ESP32 nodes online — soil moisture, temperature and humidity streaming normally.', sev:'info'});
+  if(!entries.length){ el.innerHTML = `<p style="font-size:13px;color:#8AA093;">No history yet — activity will appear here as your farm is used.</p>`; return; }
+  el.innerHTML = entries.map(e=>`
+    <div class="tl-item ${e.sev==='bad'?'bad':e.sev==='warn'?'warn':''}">
+      <div class="tl-date">${e.date}</div>
+      <div class="tl-title">${e.title}</div>
+      <div class="tl-desc">${e.desc}</div>
+    </div>`).join('');
+}
+
+/* ---------------- ADMIN SIDE ---------------- */
+let assignTargetCase = null;
+function openAssignModalFor(id){
+  assignTargetCase = id;
+  const sel = document.getElementById('atTech');
+  sel.innerHTML = technicians.filter(t=>t.status!=='offline').map(t=>`<option value="${t.id}">${t.name} (${t.status})</option>`).join('');
+  openModal('assignTechModal');
+}
+function submitAssignTech(){
+  const c = cases.find(x=>x.id===assignTargetCase);
+  if(!c) return;
+  const techId = document.getElementById('atTech').value;
+  const tech = technicians.find(t=>t.id===techId);
+  const type = document.getElementById('atType').value;
+  const priority = document.getElementById('atPriority').value;
+  c.technicianId = tech.id; c.technicianName = tech.name; c.priority = priority; c.problemType = type;
+  c.status = 'assigned';
+  tech.activeAssignments++; tech.status = 'busy';
+  addTimeline(c, `Admin assigned ${tech.name} for ${type}.`);
+  closeModal('assignTechModal');
+  pushNotification({ sev:'info', title:`Technician Assigned — ${c.id}`, msg:`${tech.name} has been assigned to inspect ${c.crop} in ${c.field}, ${c.farmName}.`, zone:c.field, sensor:'Inspection Assignment', technical:`Case ${c.id} · Technician ${tech.id}` });
+  renderAdminCaseData(); renderFarmerCaseData(); renderTechAll();
+}
+function renderAdminCaseData(){
+  const listEl = document.getElementById('adminCaseList');
+  if(listEl) listEl.innerHTML = cases.length ? cases.map(c=>caseCardHTML(c,'admin')).join('') : `<p style="font-size:13px;color:#8AA093;">No inspection requests yet.</p>`;
+  const badge = document.getElementById('notifBadgeInsp');
+  if(badge){ const n = cases.filter(c=>c.status==='new'||c.status==='verify').length; badge.textContent = n; badge.dataset.zero = n===0?'1':'0'; }
+  const techEl = document.getElementById('adminTechList');
+  if(techEl){
+    techEl.innerHTML = technicians.map(t=>`
+      <div class="tech-card">
+        <div class="tech-avatar">${t.name.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>
+        <div class="tech-info">
+          <div class="tech-name">${t.name} <span style="font-family:var(--font-mono); color:#8AA093; font-weight:400;">· ${t.id}</span></div>
+          <div class="tech-sub">${t.activeAssignments} active assignment${t.activeAssignments!==1?'s':''} · ${t.completed} completed inspections</div>
+        </div>
+        <span class="tech-status ${t.status}">${t.status}</span>
+      </div>`).join('');
+  }
+  renderAdminProductsOrders();
+}
+function renderAdminProductsOrders(){
+  const grid = document.getElementById('adminProductGrid');
+  if(grid){
+    grid.innerHTML = products.map(p=>`
+      <div class="product-card">
+        <div class="product-cat">${p.category}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-foot"><span class="product-price">${p.price}</span><span class="product-avail">${p.availability}</span></div>
+      </div>`).join('');
+  }
+  const tbody = document.querySelector('#adminOrderTable tbody');
+  if(tbody){
+    tbody.innerHTML = orders.length ? orders.map(o=>`
+      <tr><td>${o.id}</td><td>${o.farmerName}</td><td>${o.productName}</td><td>${o.qty}</td><td>${o.caseId}</td>
+      <td><span class="sh-status ${o.status==='Delivered'?'online':'offline'}">${o.status}</span></td><td>${o.date}</td></tr>`).join('')
+      : `<tr><td colspan="7" style="text-align:center; color:#8AA093;">No orders placed yet.</td></tr>`;
+  }
+}
+let orderTargetCase = null;
+function openCreateOrderModalFor(id){
+  orderTargetCase = id;
+  const sel = document.getElementById('coProduct');
+  sel.innerHTML = products.map(p=>`<option value="${p.id}">${p.name} — ${p.price}</option>`).join('');
+  document.getElementById('coQty').value = 1;
+  openModal('createOrderModal');
+}
+function submitCreateOrder(){
+  const c = cases.find(x=>x.id===orderTargetCase);
+  if(!c) return;
+  const prod = products.find(p=>p.id===document.getElementById('coProduct').value);
+  const qty = parseInt(document.getElementById('coQty').value) || 1;
+  orderIdSeq++;
+  const order = { id:'ORD-'+orderIdSeq, farmerName:c.farmerName, productName:prod.name, qty, date:'Today', status:'Order Placed', caseId:c.id };
+  orders.unshift(order);
+  c.orderId = order.id; c.status = 'resolved';
+  addTimeline(c, `Admin approved case and ordered ${prod.name} (x${qty}).`);
+  const tech = technicians.find(t=>t.id===c.technicianId);
+  if(tech){ tech.activeAssignments = Math.max(0, tech.activeAssignments-1); if(tech.activeAssignments===0) tech.status='available'; }
+  closeModal('createOrderModal');
+  pushNotification({ sev:'info', title:`Order Placed — ${order.id}`, msg:`${prod.name} (x${qty}) ordered for ${c.farmerName}, linked to case ${c.id}. Case marked Resolved.`, zone:c.field, sensor:'Product Ordering', technical:`Order ${order.id} · Case ${c.id}` });
+  renderAdminCaseData(); renderFarmerCaseData(); renderTechAll();
+  setTimeout(()=>{ order.status = 'Delivered'; renderAdminProductsOrders(); renderFarmerCaseData(); }, 8000);
+}
+function resolveWithoutOrder(id){
+  const c = cases.find(x=>x.id===id);
+  if(!c) return;
+  c.status = 'resolved';
+  addTimeline(c, 'Admin reviewed the report and marked the case Resolved — no product order was required.');
+  const tech = technicians.find(t=>t.id===c.technicianId);
+  if(tech){ tech.activeAssignments = Math.max(0, tech.activeAssignments-1); if(tech.activeAssignments===0) tech.status='available'; }
+  renderAdminCaseData(); renderFarmerCaseData(); renderTechAll();
+}
+
+/* ---------------- TECHNICIAN SIDE ---------------- */
+let currentTechCase = null;
+let droneImageCount = 0;
+let verifyChoice = null;
+
+function myTechCases(){ return cases.filter(c=>c.technicianId===CURRENT_TECH_ID); }
+
+function renderTechAll(){
+  const mine = myTechCases();
+  const assignedCount = mine.filter(c=>c.status==='assigned').length;
+  const progressCount = mine.filter(c=>['progress','ai'].includes(c.status)).length;
+  const completedCount = mine.filter(c=>['verify','completed','resolved'].includes(c.status)).length;
+  const confirmedCount = mine.filter(c=>c.verification && c.verification.decision==='confirm').length;
+  const setTxt = (id,v)=>{ const el = document.getElementById(id); if(el) el.textContent = v; };
+  setTxt('techStatAssigned', assignedCount);
+  setTxt('techStatProgress', progressCount);
+  setTxt('techStatCompleted', completedCount);
+  setTxt('techStatConfirmed', confirmedCount);
+
+  const dashList = document.getElementById('techDashList');
+  if(dashList) dashList.innerHTML = mine.length ? mine.map(c=>caseCardHTML(c,'technician')).join('') : `<p style="font-size:13px;color:#8AA093;">No assignments yet.</p>`;
+  const assignList = document.getElementById('techAssignList');
+  if(assignList) assignList.innerHTML = mine.length ? mine.map(c=>caseCardHTML(c,'technician')).join('') : `<p style="font-size:13px;color:#8AA093;">No assignments yet.</p>`;
+  const histList = document.getElementById('techHistoryList');
+  if(histList){
+    const done = mine.filter(c=>['verify','completed','resolved'].includes(c.status));
+    histList.innerHTML = done.length ? done.map(c=>caseCardHTML(c,'technician')).join('') : `<p style="font-size:13px;color:#8AA093;">No completed inspections yet.</p>`;
+  }
+}
+
+function openCaseWorkspace(id){
+  currentTechCase = cases.find(c=>c.id===id);
+  if(!currentTechCase) return;
+  if(currentTechCase.status==='assigned') currentTechCase.status = 'progress';
+  droneImageCount = 0; verifyChoice = null;
+  document.querySelector('#navTechnician .nav-item[data-view="techcase"]').click();
+  document.getElementById('techCaseSub').textContent = `${currentTechCase.id} — ${currentTechCase.crop}, ${currentTechCase.field}, ${currentTechCase.farmName}`;
+  document.getElementById('techCaseEmpty').style.display = 'none';
+  document.getElementById('techCaseBody').style.display = 'block';
+  document.getElementById('techCaseInfo').innerHTML = `
+    <div class="simple-row"><div><div class="t">Farmer</div><div class="s">${currentTechCase.farmerName}</div></div></div>
+    <div class="simple-row"><div><div class="t">Farm / Field</div><div class="s">${currentTechCase.farmName} · ${currentTechCase.field}</div></div></div>
+    <div class="simple-row"><div><div class="t">Crop</div><div class="s">${currentTechCase.crop}</div></div></div>
+    <div class="simple-row"><div><div class="t">Reported Problem</div><div class="s">${currentTechCase.problemType}</div></div></div>
+    <div class="simple-row"><div><div class="t">Description</div><div class="s">${currentTechCase.description}</div></div></div>
+    <div class="simple-row"><div><div class="t">Priority</div><div class="s"><span class="pri-tag ${priCss(currentTechCase.priority)}">${currentTechCase.priority}</span></div></div></div>`;
+  document.getElementById('droneThumbRow').innerHTML = '';
+  document.getElementById('runAiBtn').disabled = true;
+  document.getElementById('aiStepsBox').style.display = 'none';
+  document.getElementById('aiStepsBox').querySelectorAll('.ai-step').forEach(s=>s.classList.remove('active','done'));
+  document.getElementById('aiResultBox').style.display = 'none';
+  document.getElementById('techVerifyCard').style.display = 'none';
+  renderTechAll();
+}
+function simulateDroneUpload(){
+  if(!currentTechCase || droneImageCount>=3) return;
+  droneImageCount++;
+  const row = document.getElementById('droneThumbRow');
+  row.insertAdjacentHTML('beforeend', `<div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span class="tlabel">Drone Image ${droneImageCount}</span></div>`);
+  document.getElementById('runAiBtn').disabled = false;
+}
+function runAiAnalysis(){
+  if(!currentTechCase) return;
+  document.getElementById('runAiBtn').disabled = true;
+  const box = document.getElementById('aiStepsBox');
+  box.style.display = 'flex'; box.style.flexDirection = 'column';
+  const steps = box.querySelectorAll('.ai-step');
+  steps.forEach(s=>s.classList.remove('active','done'));
+  let i = 0;
+  function step(){
+    if(i>0) steps[i-1].classList.remove('active'), steps[i-1].classList.add('done');
+    if(i<steps.length){ steps[i].classList.add('active'); i++; setTimeout(step, 650); }
+    else finishAi();
+  }
+  step();
+}
+function finishAi(){
+  const problemMap = {
+    'Pest / Worm Damage':'Possible Caterpillar / Worm Damage',
+    'Leaf Disease':'Possible Early Blight / Fungal Leaf Spot',
+    'Wilting / Water Stress':'Possible Water Stress / Root Zone Deficiency',
+    'Nutrient Deficiency':'Possible Nitrogen / Micronutrient Deficiency',
+    'Other':'Unclassified Visible Stress Pattern',
+  };
+  const confidence = 78 + Math.floor(Math.random()*16); // 78–93%
+  const severities = ['Low','Moderate','High'];
+  const severity = severities[Math.min(2, Math.floor(Math.random()*3))];
+  const affectedArea = 8 + Math.floor(Math.random()*22);
+  const result = { problem: problemMap[currentTechCase.problemType] || 'Possible Crop Stress Detected', confidence, severity, affectedArea };
+  currentTechCase.aiResult = result;
+  currentTechCase.status = 'ai';
+  addTimeline(currentTechCase, `AI analyzed drone images — ${result.problem} (${confidence}% confidence).`);
+  const resBox = document.getElementById('aiResultBox');
+  resBox.style.display = 'block';
+  resBox.innerHTML = `
+    <div class="ar-title">🔬 AI Analysis Result</div>
+    <div class="simple-list" style="margin-top:10px;">
+      <div class="simple-row"><div><div class="t">Possible Problem</div><div class="s">${result.problem}</div></div></div>
+      <div class="simple-row"><div><div class="t">Confidence</div><div class="s">${result.confidence}%</div></div></div>
+      <div class="simple-row"><div><div class="t">Estimated Severity</div><div class="s">${result.severity}</div></div></div>
+      <div class="simple-row"><div><div class="t">Estimated Affected Area</div><div class="s">${result.affectedArea}%</div></div></div>
+      <div class="simple-row"><div><div class="t">Status</div><div class="s">Technician Verification Required</div></div></div>
+    </div>
+    <div class="confidence-bar"><div class="confidence-fill" style="width:${result.confidence}%;"></div></div>
+    <div class="ai-disclaimer">This is AI-assisted decision support, not a guaranteed diagnosis. Final confirmation must come from the assigned technician's on-site verification.</div>`;
+  document.getElementById('vfSeverity').value = result.severity;
+  document.getElementById('vfArea').value = result.affectedArea;
+  document.getElementById('techVerifyCard').style.display = 'block';
+  renderTechAll();
+}
+function setVerifyChoice(choice){
+  verifyChoice = choice;
+  document.querySelectorAll('#verifyBtns .vbtn').forEach(b=>b.classList.remove('sel'));
+  document.querySelector(`#verifyBtns .vbtn.${choice}`).classList.add('sel');
+}
+function submitInspectionReport(){
+  if(!currentTechCase) return;
+  if(!verifyChoice){ alert('Please select Confirm, Reject, or Requires Further Inspection first.'); return; }
+  const severity = document.getElementById('vfSeverity').value;
+  const affectedArea = document.getElementById('vfArea').value;
+  const observation = document.getElementById('vfObs').value.trim() || 'No additional observation entered.';
+  const action = document.getElementById('vfAction').value.trim() || 'No recommended action entered.';
+  currentTechCase.verification = { decision:verifyChoice, severity, affectedArea, observation, action };
+  currentTechCase.status = verifyChoice==='further' ? 'progress' : 'verify';
+  const decisionLabel = verifyChoice==='confirm' ? 'CONFIRMED' : verifyChoice==='reject' ? 'REJECTED' : 'Marked as Requires Further Inspection';
+  addTimeline(currentTechCase, `Technician submitted inspection report — ${decisionLabel}. Observation: ${observation}`);
+  pushNotification({ sev:'info', title:`Inspection Report Submitted — ${currentTechCase.id}`, msg:`Technician ${decisionLabel.toLowerCase()} the AI result for ${currentTechCase.crop} in ${currentTechCase.field}. Awaiting Admin review.`, zone:currentTechCase.field, sensor:'Technician Verification', technical:`Case ${currentTechCase.id} · Decision: ${verifyChoice}` });
+  alert(`Inspection report submitted for ${currentTechCase.id}. Admin will review next.`);
+  renderTechAll(); renderAdminCaseData(); renderFarmerCaseData();
+  document.querySelector('#navTechnician .nav-item[data-view="techassign"]').click();
+}
+
+/* ---------------- VOICE ASSISTANT ---------------- */
+let voiceBusy = false;
+function toggleVoice(){
+  if(voiceBusy) return;
+  voiceBusy = true;
+  const orb = document.getElementById('voiceOrb');
+  const state = document.getElementById('voiceState');
+  orb.classList.add('listening');
+  state.textContent = 'Listening...';
+  const demoQueries = [
+    'What is the temperature today?',
+    'What is the soil moisture in Field 2?',
+    'What is happening in my farm?',
+    'Turn on Motor 2 for 20 minutes',
+  ];
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  let handled = false;
+  const fallback = setTimeout(()=>{
+    if(!handled){ handled = true; finishVoice(demoQueries[Math.floor(Math.random()*demoQueries.length)]); }
+  }, 1600);
+  if(SR){
+    try{
+      const rec = new SR();
+      rec.lang = 'en-IN'; rec.interimResults = false; rec.maxAlternatives = 1;
+      rec.onresult = (e)=>{ if(handled) return; handled = true; clearTimeout(fallback); finishVoice(e.results[0][0].transcript); };
+      rec.onerror = ()=>{ if(handled) return; handled = true; clearTimeout(fallback); finishVoice(demoQueries[Math.floor(Math.random()*demoQueries.length)]); };
+      rec.start();
+    }catch(e){ /* fallback timer will handle it */ }
+  }
+}
+function finishVoice(text){
+  const orb = document.getElementById('voiceOrb');
+  const state = document.getElementById('voiceState');
+  orb.classList.remove('listening');
+  state.textContent = 'Understanding...';
+  setTimeout(()=>{
+    state.textContent = 'Processing...';
+    sendChat(text);
+    setTimeout(()=>{ state.textContent = 'Tap to speak'; voiceBusy = false; }, 700);
+  }, 500);
+}
+
+/* ---------------- VOICE / CHAT COMMAND EXTENSIONS ---------------- */
+let pendingVoiceAction = null;
+const originalBotReply = botReply;
+botReply = function(text){
+  const key = text.trim().toLowerCase();
+
+  if(pendingVoiceAction && /^(yes|confirm|yes please|go ahead|do it)\b/.test(key)){
+    const act = pendingVoiceAction; pendingVoiceAction = null;
+    const m = motors.find(x=>x.id===act.motor);
+    if(m){ toggleMotor(m.id, true); return `Motor ${m.id} has been started for approximately ${act.duration} minutes. You'll get a notification when it's time to stop.`; }
+    return "I couldn't find that motor to start.";
+  }
+  if(pendingVoiceAction && /^(no|cancel|stop|never mind)\b/.test(key)){
+    pendingVoiceAction = null;
+    return 'No problem, I\'ve cancelled that action.';
+  }
+
+  const motorMatch = key.match(/turn (on|off) motor\s*(\d+)(?:\s*for\s*(\d+)\s*min)?/);
+  if(motorMatch){
+    const [, onOff, motorNum, duration] = motorMatch;
+    const motorId = parseInt(motorNum);
+    const m = motors.find(x=>x.id===motorId);
+    if(!m) return `I couldn't find Motor ${motorNum} on this farm.`;
+    if(onOff==='off'){ toggleMotor(m.id, false); return `Motor ${m.id} has been stopped.`; }
+    const dur = duration || '15';
+    pendingVoiceAction = { motor:motorId, duration:dur };
+    return `Motor ${m.id} is connected to ${m.zone}. It will run for ${dur} minutes. Shall I start it? (say "yes" to confirm)`;
+  }
+  if(key.includes('temperature')){
+    const t = sensors.find(s=>s.name==='Temperature');
+    return `Current temperature is ${t ? t.val+t.unit : '29.4°C'}.`;
+  }
+  if(key.includes('soil moisture')){
+    const fieldMatch = key.match(/field\s*(\d+)/);
+    const s = sensors.find(s=>s.name==='Soil Moisture');
+    const label = fieldMatch ? `Field ${fieldMatch[1]}` : 'your active field';
+    return `${label} currently has ${s ? s.val+'%' : 'around 54%'} soil moisture.`;
+  }
+  if(key.includes('humidity')){
+    const s = sensors.find(s=>s.name==='Humidity');
+    return `Current humidity is ${s ? s.val+'%' : '68%'}.`;
+  }
+  if(key.includes('technician') && (key.includes('status') || key.includes('assigned'))){
+    const mine = cases.filter(c=>c.farmerName==='HardHackers' && c.technicianId);
+    if(!mine.length) return 'No technician is currently assigned to any of your cases.';
+    const c = mine[0];
+    return `${c.technicianName} is assigned to case ${c.id} for your ${c.crop} in ${c.field}. Current status: ${statusMeta(c.status).label}.`;
+  }
+  if(key.includes('order') && key.includes('status')){
+    const myOrders = orders.filter(o=>o.farmerName==='HardHackers');
+    if(!myOrders.length) return 'You have no active orders right now.';
+    const o = myOrders[0];
+    return `Your order ${o.id} for ${o.productName} is currently ${o.status}.`;
+  }
+  if(key.includes('inspection') && (key.includes('status') || key.includes('request'))){
+    const myCases = cases.filter(c=>c.farmerName==='HardHackers');
+    const pending = myCases.filter(c=>c.status!=='resolved');
+    if(!pending.length) return 'All your inspection requests are resolved. No pending cases right now.';
+    return `You have ${pending.length} inspection${pending.length>1?'s':''} in progress: ${pending.map(c=>`${c.id} (${statusMeta(c.status).label})`).join(', ')}.`;
+  }
+  if(key.includes('problem in my') || (key.includes('problem') && key.includes('field') && key.includes('check'))){
+    return 'I can log that as a crop inspection request — please open the Crop Inspection page and use "Report Crop Problem" so I can capture the field, crop and a photo if you have one.';
+  }
+  if(key.includes('what is happening') || key.includes('farm summary') || key.includes('summarize my farm')){
+    const idleMotors = motors.filter(m=>!m.running).length;
+    const runningMotors = motors.filter(m=>m.running).length;
+    const pendingCases = cases.filter(c=>c.farmerName==='HardHackers' && c.status!=='resolved').length;
+    return `${currentFarm.name} is currently healthy. ${runningMotors} motor${runningMotors!==1?'s are':' is'} running and ${idleMotors} idle. Rain probability is low today. There ${pendingCases===1?'is':'are'} ${pendingCases} pending inspection case${pendingCases!==1?'s':''}.`;
+  }
+  return originalBotReply(text);
+};
+
+/* ---------------- INITIAL RENDER FOR NEW MODULES ---------------- */
+renderFarmerCaseData();
+renderAdminCaseData();
+renderTechAll();
 </script>
 </body>
 </html>
